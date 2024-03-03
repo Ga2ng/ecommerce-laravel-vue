@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const state = {
   cartItems: [], // Menggunakan array untuk menyimpan detail produk
 };
@@ -16,6 +18,16 @@ const actions = {
   updateCartNotification(context, notification) {
     console.log("notification:", notification);
     context.commit('incrementCartItem', notification); // Memanggil mutasi incrementCartItem dengan ID yang diberikan
+  },
+  async getAllData() {
+    try {
+      let response = await axios.get("/api/getAllData"); // Sesuaikan dengan URL yang Anda daftarkan di Laravel
+      console.log(response);
+      return response.data; // Mengembalikan data yang diperoleh dari server
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      throw error; // Melempar error ke komponen yang memanggil aksi ini
+    }
   }
 };
 

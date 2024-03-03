@@ -22,12 +22,29 @@
       </div>
     </div>
   </div>
+
+  <!-- test getdata -->
+  <!-- <div>
+    <button class="mx-1 btn btn-success" @click="getData" >GET</button>
+  </div> -->
 </template>
 
 
 <script>
 export default {
-  name: 'AboutPage'
+  name: 'AboutPage',
+  methods: {
+    // async getData() {
+    //   try {
+    //     // Memanggil aksi getAllData dari store
+    //     let data = await this.$store.dispatch('getAllData');
+    //     console.log(data); // Data yang diperoleh dari backend
+    //   } catch (error) {
+    //     console.error("Error getting data:", error);
+    //     // Lakukan penanganan kesalahan di sini sesuai kebutuhan Anda
+    //   }
+    // }
+  }
 }
 </script>
 
